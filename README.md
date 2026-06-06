@@ -1,5 +1,12 @@
 # HiveLens
 
+[![CI](https://github.com/Raf3-Tech/hivelens/actions/workflows/ci.yml/badge.svg)](https://github.com/Raf3-Tech/hivelens/actions/workflows/ci.yml)
+![Python](https://img.shields.io/badge/python-3.11+-3776AB?logo=python&logoColor=white)
+![React](https://img.shields.io/badge/react-18-61DAFB?logo=react&logoColor=black)
+![TypeScript](https://img.shields.io/badge/typescript-5-3178C6?logo=typescript&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/postgres-16-4169E1?logo=postgresql&logoColor=white)
+![Claude](https://img.shields.io/badge/AI-Claude%20Sonnet-D97757?logo=anthropic&logoColor=white)
+
 Fan segmentation & AI campaign studio. Ingest a fan list, auto-build audience
 segments (VIP, lapsed, first-timer, high-spender, local), build custom segments
 with live filters, and generate personalized email + SMS campaigns per segment.
@@ -8,6 +15,23 @@ with live filters, and generate personalized email + SMS campaigns per segment.
 - **Frontend:** React 18 + TypeScript
 - **AI copy:** Claude (`claude-sonnet-4`) when an API key is present, otherwise
   a library of pre-generated campaigns served from Postgres
+
+> **🔌 Demo mode vs. live Claude** — HiveLens runs the full experience with **no
+> API key**: campaign copy is served from a library of pre-generated emails/SMS
+> in Postgres, and each "Regenerate" rotates through multiple variants per
+> segment so it feels live. Set `ANTHROPIC_API_KEY` and the exact same flow
+> switches to real-time Claude generation — **zero code changes.** The preview
+> drawer always labels the source.
+
+## Screenshots
+
+**Segment dashboard** — 5,000 demo fans auto-segmented, with live counts and projected open rates:
+
+![HiveLens dashboard](docs/hivelens-dashboard.png)
+
+**Campaign preview drawer** — personalized email/SMS per segment (here served from the demo database):
+
+![HiveLens campaign drawer](docs/hivelens-campaign.png)
 
 ---
 
